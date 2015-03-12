@@ -42,7 +42,7 @@ if node[:awscli][:config_profiles]
       owner user
       group user
       mode 00700
-      not_if { ::File.exist?(::File.dirname(config_file)) }
+      # not_if { ::File.exist?(::File.dirname(config_file)) }
       if node[:awscli][:compile_time]
         action :nothing
       end
