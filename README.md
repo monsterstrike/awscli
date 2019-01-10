@@ -7,6 +7,9 @@ For ubuntu and debian platforms, also installs command-ine completion for the `a
 
 Configuring
 ===========
+##### `[:awscli][:version]`
+The version of awscli tool
+Default: 1.16.38 ( last one that doesn't break cloud-init https://github.com/aws/aws-cli/issues/3678#issuecomment-433191412 )
 
 ##### `[:awscli][:compile_time]`
 
