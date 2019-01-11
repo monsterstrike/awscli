@@ -2,12 +2,12 @@
 
 case node[:platform]
 when 'debian', 'ubuntu'
-  file = '/usr/local/bin/aws'
-  cmd = 'apt-get install -y python-pip && pip install awscli'
+  file = "/usr/local/bin/aws"
+  cmd = "apt-get install -y python-pip && pip install awscli==#{node[:awscli][:version]}"
   completion_file = '/etc/bash_completion.d/aws'
 when 'redhat', 'centos', 'fedora', 'amazon', 'scientific'
-  file = '/usr/bin/aws'
-  cmd = 'yum -y install python-pip && pip install awscli'
+  file = "/usr/bin/aws"
+  cmd = "yum -y install python-pip && pip install awscli==#{node[:awscli][:version]}"
 end
 r = execute 'install awscli' do
   command cmd
